@@ -13,10 +13,10 @@ const getHumanChoice = function () {
 };
 
 //game
+let humanScore = 0;
+let computerScore = 0;
 const playGame = function () {
   //round function
-  let humanScore = 0;
-  let computerScore = 0;
 
   const playRound = function (humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -40,6 +40,7 @@ const playGame = function () {
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
   }
+  console.log(`Final score: Human: ${humanScore}, Computer: ${computerScore}`);
 };
 
 playGame();
