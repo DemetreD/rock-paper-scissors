@@ -1,0 +1,58 @@
+.reset__btn {
+  display: none;
+}
+
+/* scores section */
+.scores {
+  display: flex;
+  gap: 5rem;
+  text-align: center;
+}
+
+.hero {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scores__person-text,
+.scores__computer-text,
+.person__score,
+.computer__score {
+  font-size: 2rem;
+}
+
+.container {
+  width: 70%;
+  border: 1px solid red;
+  margin-inline: auto;
+}
+
+.hero__container {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero__btn {
+  background-color: #808080;
+  padding: 0.5rem 1.4rem;
+  color: #fff;
+  margin-top: 4rem;
+}
+.hero__container {
+  margin-top: 2rem;
+}
+
+.results__container {
+  display: flex;
+  align-items: center;
+}
+
+/* utils */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
