@@ -6,6 +6,8 @@ const results = document.querySelector("#results");
 const personScore = document.querySelector("#personScore");
 const compScore = document.querySelector("#computerScore");
 const resetBtn = document.querySelector("#resetBtn");
+const personSel = document.querySelector(".person__selection");
+const computerSel = document.querySelector(".computer__selection");
 
 //computer choice
 const getComputerChoice = function () {
@@ -23,6 +25,12 @@ personScore.textContent = 0;
 compScore.textContent = 0;
 resetBtn.classList.add("reset__btn");
 
+const endGame = function () {
+  rock.disabled = true;
+  paper.disabled = true;
+  scissors.disabled = true;
+};
+
 const updateUi = function () {
   personScore.textContent = 0;
   compScore.textContent = 0;
@@ -33,37 +41,43 @@ const updateUi = function () {
   scissors.disabled = false;
   results.textContent = "";
   resetBtn.classList.add("reset__btn");
+  personSel.textContent = "";
+  computerSel.textContent = "";
 };
 
-// const checkWinner = function (humanChoice, computerChoice) {};
-
-const playRound = function (humanChoice, computerChoice) {
+const checkWinner = function (humanChoice, computerChoice) {
+  personSel.textContent = humanChoice;
+  computerSel.textContent = computerChoice;
   if (humanChoice === computerChoice) {
-    results.textContent = `It's a Tie!`;
+    results.textContent = `Tie!`;
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
     personScore.textContent = ++humanScore;
-    results.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+    results.textContent = `You win!`;
   } else {
     compScore.textContent = ++computerScore;
-    results.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+    results.textContent = `You lose!`;
   }
+};
 
-  if (humanScore === 5) {
-    results.textContent = `You win! Human: ${humanScore}, Computer: ${computerScore}`;
-    rock.disabled = true;
-    paper.disabled = true;
-    scissors.disabled = true;
+const playRound = function (humanChoice, computerChoice) {
+  checkWinner(humanChoice, computerChoice);
+
+  const WIN_SCORE = 5;
+
+  if (humanScore === WIN_SCORE) {
+    results.textContent = `You win!`;
+    endGame();
     resetBtn.classList.remove("reset__btn");
-  } else if (computerScore === 5) {
-    results.textContent = `You lose! Computer: ${computerScore}, Human: ${humanScore}`;
-    rock.disabled = true;
-    paper.disabled = true;
-    scissors.disabled = true;
+    resetBtn.classList.add("reset__button");
+  } else if (computerScore === WIN_SCORE) {
+    results.textContent = `You lose!`;
+    endGame();
     resetBtn.classList.remove("reset__btn");
+    resetBtn.classList.add("reset__button");
   }
 };
 
