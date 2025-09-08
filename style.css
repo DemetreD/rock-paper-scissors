@@ -2,6 +2,27 @@
   display: none;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #17153b;
+  color: #fff;
+}
+
+.game__title {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.results {
+  font-size: 1.5rem;
+}
+
+.person__selection,
+.computer__selection {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
 /* scores section */
 .scores {
   display: flex;
@@ -10,7 +31,7 @@
 }
 
 .hero {
-  margin-top: 10rem;
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +47,9 @@
 
 .container {
   width: 70%;
-  border: 1px solid red;
+  /* border: 5px solid #2e236c; */
   margin-inline: auto;
+  border-radius: 10px;
 }
 
 .hero__container {
@@ -35,11 +57,13 @@
   gap: 2rem;
 }
 
-.hero__btn {
-  background-color: #808080;
+.hero__btn,
+.reset__button {
+  background-color: #5682b1;
   padding: 0.5rem 1.4rem;
   color: #fff;
   margin-top: 4rem;
+  border-radius: 1000000000px;
 }
 .hero__container {
   margin-top: 2rem;
@@ -47,10 +71,13 @@
 
 .results__container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
   align-items: center;
 }
 
-/* utils */
+/* utilities */
 .btn {
   border: none;
   cursor: pointer;
