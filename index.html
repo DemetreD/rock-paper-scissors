@@ -3,26 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body></body>
+  <body>
+      <h1 class="game__title">Rock Paper Scissors</h1>
+     <section class="hero container">
 
-  <section class="hero container">
     <div class="scores">
       <div class="scores__person">
         <p class="scores__person-text">Person</p>
         <div class="person__score" id="personScore"></div>
+        <div class="person__selection"></div>
       </div>
 
       <div class="results__container">
         <div class="results" id="results"></div>
+        <button class=".reset__button btn" id="resetBtn">Play Again</button>
       </div>
 
       <div class="scores__computer">
         <p class="scores__computer-text">Computer</p>
         <div class="computer__score" id="computerScore"></div>
+        <div class="computer__selection"></div>
       </div>
     </div>
     <div class="hero__container">
@@ -31,13 +38,13 @@
       <button class="hero__btn btn" id="scissors">Scissors</button>
     </div>
 
-    <!-- <div class="results" id="results"></div> -->
-    <button id="resetBtn">Play Again</button>
-
   </section>
 
 
   </footer>
 
   <script src="./script.js"></script>
+  </body>
+
+ 
 </html>
